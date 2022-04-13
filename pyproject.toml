@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "SprayingToolkit"
+version = "0.1.0"
+description = "\"Scripts to make password spraying attacks against Lync/S4B, OWA & O365 a lot quicker, less painful and more efficient\""
+authors = ["Your Name <you@example.com>"]
+license = "GPLv3"
+
+[tool.poetry.dependencies]
+python = "~3.7"
+requests = "^2.27.1"
+requests_ntlm = "^1.1.0"
+lxml = "^4.8.0"
+termcolor = "^1.1.0"
+docopt = "^0.6.2"
+boto3 = "^1.21.39"
+IMAPClient = "^2.2.0"
+mitmproxy = "^5.3.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
