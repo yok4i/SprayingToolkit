@@ -42,11 +42,11 @@ A blazing fast password sprayer for Lync/Skype For Business and OWA, built on As
 #### Usage
 ```
 Usage:
-    atomizer (lync|owa|imap) <target> <password> <userfile> [--targetPort PORT] [--threads THREADS] [--debug]
-    atomizer (lync|owa|imap) <target> <passwordfile> <userfile> --interval <TIME> [--gchat <URL>] [--slack <URL>] [--targetPort PORT][--threads THREADS] [--debug]
-    atomizer (lync|owa|imap) <target> --csvfile CSVFILE [--user-row-name NAME] [--pass-row-name NAME] [--targetPort PORT] [--threads THREADS] [--debug]
-    atomizer (lync|owa|imap) <target> --user-as-pass USERFILE [--targetPort PORT] [--threads THREADS] [--debug]
-    atomizer (lync|owa|imap) <target> --recon [--debug]
+    atomizer (lync|owa|imap) <target> <password> <userfile> [--gchat <URL>] [--slack <URL>] [--proxy PROXY] [--targetPort PORT] [--threads THREADS] [--sleep SECONDS] [--debug] [--shuffle] [--o365]
+    atomizer (lync|owa|imap) <target> <passwordfile> <userfile> --interval <TIME> [--gchat <URL>] [--slack <URL>] [--proxy PROXY] [--targetPort PORT] [--threads THREADS] [--sleep SECONDS] [--debug] [--shuffle] [--o365]
+    atomizer (lync|owa|imap) <target> --csvfile CSVFILE [--user-row-name NAME] [--pass-row-name NAME] [--gchat <URL>] [--slack <URL>] [--proxy PROXY] [--targetPort PORT] [--threads THREADS] [--sleep SECONDS] [--debug] [--shuffle] [--o365]
+    atomizer (lync|owa|imap) <target> --user-as-pass USERFILE [--gchat <URL>] [--slack <URL>] [--proxy PROXY] [--targetPort PORT] [--threads THREADS] [--sleep SECONDS] [--debug] [--shuffle] [--o365]
+    atomizer (lync|owa|imap) <target> --recon [--debug] [--proxy PROXY]
     atomizer -h | --help
     atomizer -v | --version
 
@@ -61,10 +61,14 @@ Options:
     -v, --version            show version
     -c, --csvfile CSVFILE    csv file containing usernames and passwords
     -i, --interval TIME      spray at the specified interval [format: "H:M:S"]
+    -s, --sleep SECONDS      sleep after each authentication attempt [default: 5]
     -t, --threads THREADS    number of concurrent threads to use [default: 3]
     -d, --debug              enable debug output
     -p, --targetPort PORT    target port of the IMAP server (IMAP only) [default: 993]
+    -x, --proxy PROXY        use proxy on requests
     --recon                  only collect info, don't password spray
+    --shuffle                shuffle user list in each iteration
+    --o365                   force o365 auth method (useful with Fireprox)
     --gchat URL              gchat webhook url for notification
     --slack URL              slack webhook url for notification
     --user-row-name NAME     username row title in CSV file [default: Email Address]
